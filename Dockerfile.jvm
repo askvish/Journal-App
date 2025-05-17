@@ -84,8 +84,9 @@ FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
 # Set working directory
 WORKDIR /app
 
-# We make four distinct layers so if there are application changes the library layers can be re-used
-COPY /deployment/*.jar app.jar
+ls deployment
+
+COPY deployment/*.jar app.jar
 
 # Expose the default Quarkus port
 EXPOSE 8080
