@@ -86,7 +86,7 @@ ENV LANGUAGE='en_US:en'
 WORKDIR /app
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
-COPY ./quarkus-run.jar app.jar
+COPY deployment/quarkus-run.jar app.jar
 
 # Expose the default Quarkus port
 EXPOSE 8080
