@@ -84,8 +84,6 @@ FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
 # Set working directory
 WORKDIR /app
 
-ls deployment
-
 COPY deployment/*.jar app.jar
 
 # Expose the default Quarkus port
