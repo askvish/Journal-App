@@ -78,15 +78,14 @@
 #   accessed directly. (example: "foo.example.com,bar.example.com")
 #
 ###
-FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
 
-ENV LANGUAGE='en_US:en'
+FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
 
 # Set working directory
 WORKDIR /app
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
-COPY deployment/quarkus-run.jar app.jar
+COPY /deployment/*.jar app.jar
 
 # Expose the default Quarkus port
 EXPOSE 8080
